@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <%- include('header', {layout: layout}); %>
+
+  <body>
+    <nav>
+      <a href="/">Strona Główna</a>
+    </nav>
+
+    <table>
+      <thead>
+        <tr>
+          <td>Imie</td>
+          <td>Nazwisko</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(function(users){ %>
+          <tr>
+            <td>
+                <%= users.imie %>
+            </td>
+            <td>
+                <%= users.nazwisko %>
+            </td>
+            <td>
+              <a href="users/profil/<%= users.id_studenta %>">Zobacz</a>
+              <a href="users/kasuj/<%= users.id_studenta %>">Kasuj</a>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <form class="" action="/users/add" method="post">
+      <input type="text" name="imie" value="">
+      <input type="text" name="nazwisko" value="">
+      <button type="submit" name="button">Zapisz</button>
+    </form>
+  </body>
+  <hr/>
+  <%- include('footer', {footer: footer}); %>
+
+</html>

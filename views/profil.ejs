@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  <%- include('header', {layout: layout}); %>
+
+  <body>
+    <nav>
+      <a href="/users">Strona Główna</a>
+    </nav>
+
+    <table>
+      <thead>
+        <tr>
+          <td>Imie</td>
+          <td>Nazwisko</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% user.forEach(function(user){ %>
+          <tr>
+            <td>
+                <%= user.imie %>
+            </td>
+            <td>
+                <%= user.nazwisko %>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+  </body>
+
+  <%- include('footer', {footer: footer}); %>
+
+</html>
